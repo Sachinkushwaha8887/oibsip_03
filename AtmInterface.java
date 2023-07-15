@@ -1,14 +1,12 @@
 import java.util.*;
 
 class BankAccount{
-	String accountNo = "01234ABCD";
-	int pin = 1234;
-	float accountBalance = 232553.2f;
+	String accountNo = "0123456789";
+	int pin = 1357;
+	float accountBalance = 250000.2f;
 	int transactions = 0;
 	String transactionHistory = "";
-	
 	Scanner sc = new Scanner(System.in);
-	
 	public boolean login() {
 		boolean isLogin = false;
 		System.out.println("Enter Account Number");
@@ -115,11 +113,11 @@ public class AtmInterface {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		BankAccount a = new BankAccount();
-		System.out.println("------------- WELCOME to ATM -------------");
-		System.out.println("\nPlease Enter your card\n");
+		BankAccount Account = new BankAccount();
+		System.out.println("------------- WELCOME to ATM Interface -------------");
+		System.out.println("\nPlease Enter your card Number\n");
 		
-		boolean isValid = a.login();
+		boolean isValid = Account.login();
 		if(isValid) {
 			boolean flag = false;
 		    while(!flag) {
@@ -129,23 +127,23 @@ public class AtmInterface {
 				
 				switch(choice){
 					case 1:
-						a.transactionHistory();
+						Account.transactionHistory();
 						break;
 					case 2:
-						a.withdraw();
+						Account.withdraw();
 						break;
 					case 3:
-						a.deposit();
+						Account.deposit();
 						break;
 					case 4:
-						a.transfer();
+						Account.transfer();
 						break;
 					case 5:
-						a.checkBalance();
+						Account.checkBalance();
 						break;
 					case 6:
 						flag = true;
-						System.out.println("\nThankyou for visiting!!!");
+						System.out.println("\nThankyou for visiting our ATM!!!");
 						break;
 					default:
 						System.out.println("Enter correct choice...");				
